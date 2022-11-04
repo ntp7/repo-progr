@@ -1,0 +1,68 @@
+    .milk{
+        width: 100%;
+        padding: 78px 0px;
+        background-color: black;
+    }
+    .text{
+        width: 700px;
+        text-align: left;
+        float: right;
+        margin-right: 100px;
+    }
+    .text button{
+        background-color: aqua;
+        border:rgb(12, 168, 173);
+        color: white;
+        
+    }
+    .milk button {
+        background-color: #ff1e00;
+        border: aqua;
+        color: rgb(0, 0, 0);
+        padding: 10px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+    .text h1{
+        color:white;
+        font-size: 40px;
+        text-transform: capitalize;
+        margin-bottom: 25px;
+    }
+    .text h5{
+        color:white;
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-bottom: 25px;
+    }
+    .text p{
+        font-family: sans-serif;
+        color:rgb(12, 168, 173);
+        font-size: 25px;
+        margin-bottom: 200px;
+    }
+#container{
+    border:5px solid red;
+    height:300px;
+    width: 600px;
+    display: block;
+}
+div.kaste{
+    border: 3px solid green;
+    background-color: aqua;
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    margin: 5px;
+}
+circle.bumba{
+    fill:purple;
+    stroke:black;
+    stroke-width: 3px;
+}
