@@ -14,6 +14,32 @@ function sayHello(){
         cont.appendChild(cx);
     }
 }
+let bumbaX=100;
+let bumbaY=100;
+let laiks = new Date();
+
+function initAnim(){
+    bumbaX = 50;
+    bumbaY = 50;
+    laiks = new Date();
+}
+
+function anim(){
+    
+    const c = document.getElementById("anima");
+    const tagad = new Date();
+    const cx = bumbaX += 1;
+    const cy = bumbaY += 2;
+    c.setAttribute("cx",cx);
+    c.setAttribute("cy",cy);
+    if (bumbaX <= 200) 
+    setTimeout(anim, 1);
+    
+
+    
+    
+   // (tagad.getTime() - laiks.getTime()) / 100
+}
 
 /*
 <line>
@@ -29,4 +55,39 @@ function sayHello(){
 
 function sayBye(){
     alert("go away");
+}
+
+class Ball{
+    constructor(color,x,y,r){
+        const xmlns = "http://www.w3.org/2000/svg";
+        const c = document.createElementNS(xmlns, "circle");//NS means name space
+        c.setAttribute("cx", x);
+        c.setAttribute("cy", y);
+        c.setAttribute("r", Math.random() * 50);
+        c.setAttribute("class", "bumba");
+        c.setAttribute("style",`fill:${color}`);
+        this.x=x;
+        this.y=y;
+        this.r=r;
+        this.body = c;
+    }
+    insert(containerId){
+        const cont = document.getElementById(containerId);//dom
+        cont.appendChild(this.body);
+    }
+    remove(){
+        this.body.remove();
+    }
+    setX(x){
+        this.x=x;
+        this.body.setAttribute("cx", x);
+    }
+    setY(y){
+        this.y=y;
+        this.body.setAttribute("cy", y);
+    }
+    setR(r){
+        this.r = r;
+        this.body.setAttribute("r", r);
+    }
 }
