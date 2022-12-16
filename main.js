@@ -63,13 +63,13 @@ class Ball{
         const c = document.createElementNS(xmlns, "circle");//NS means name space
         c.setAttribute("cx", x);
         c.setAttribute("cy", y);
-        c.setAttribute("r", Math.random() * 50);
+        //'c.setAttribute("r", Math.random() * 50);
         c.setAttribute("class", "bumba");
         c.setAttribute("style",`fill:${color}`);
         this.x=x;
         this.y=y;
-        this.r=r;
-        this.body = c;
+        //this._r=r;
+        this.r = r;
     }
     insert(containerId){
         const cont = document.getElementById(containerId);//dom
@@ -85,9 +85,13 @@ class Ball{
     setY(y){
         this.y=y;
         this.body.setAttribute("cy", y);
+    }    
+    get r(){
+        //return this._r;
+        return parseFloat(this.body.getAttribute("r"));
     }
-    setR(r){
-        this.r = r;
+    set r(r){
+        //this._r = r;
         this.body.setAttribute("r", r);
     }
 }
