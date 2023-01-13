@@ -16,8 +16,13 @@
 		<h1>Slikta poga</h1> bus pazinojums
 	</button>
 
-<svg id="container">
-	<circle id="anima" cx="50" cy="50" r="50" class="bumba"></circle>
+<svg id="container" onclick="bumbinator(event);">
+	<rect x="300" y="150" width="5" height="5"></rect>
+<g transform="translate(300 150)" id="abc">
+	<circle id="anima" cx="0" cy="0" r="50" class="bumba"></circle>
+	<rect x="-25" y="-15" width="50" height="30"></rect>
+	<!-- <g transform=""></g> -->
+</g>
 </svg>
 
 

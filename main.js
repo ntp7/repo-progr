@@ -60,16 +60,36 @@ function sayBye(){
 class Ball{
     constructor(color,x,y,r){
         const xmlns = "http://www.w3.org/2000/svg";
+        const g = document.createElementNS(xmlns, "g");
+        this.hero = g;
+
+        this.hero.setAttribute("transform", `translate${x} ${y}`);
+
         const c = document.createElementNS(xmlns, "circle");//NS means name space
-        c.setAttribute("cx", x);
-        c.setAttribute("cy", y);
-        //'c.setAttribute("r", Math.random() * 50);
+        //c.setAttribute("cx", x);
+        //c.setAttribute("cy", y);
         c.setAttribute("class", "bumba");
         c.setAttribute("style",`fill:${color}`);
-        this.x=x;
-        this.y=y;
-        //this._r=r;
+        this.body = c;
+        this.color = color;
+        this.x = x;
+        this.y = y;
         this.r = r;
+
+        g.appendChild(this.initHero(color,x,y,r));
+
+    }
+    initHero(color, x, y, r){
+        const xmlns = "http://www.w3.org/2000/svg";
+        const c = document.createElementNS(xmlns, "circle");//NS means name space
+        c.setAttribute("class", "bumba");
+        c.setAttribute("style",`fill:${color}`);
+        this.body = c;
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        return c;
     }
     insert(containerId){
         const cont = document.getElementById(containerId);//dom
@@ -93,5 +113,12 @@ class Ball{
     set r(r){
         //this._r = r;
         this.body.setAttribute("r", r);
+    }
+    copy(){
+        //return new Ball(this.color, this.x, this.y, this.r);
+        //b.body.parentNode.getAttribute("id");
+        const buddy = new Ball(this.color, this.x, this.y, this.r);
+        buddy.insert(this.body.parentNode.getAttribute("id"));
+        return buddy;
     }
 }
